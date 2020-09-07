@@ -14,10 +14,12 @@ function setup() {
 function draw() {
   tekenAchtergrond();
 
+  for (var x = 0; x < huisNummers;x++)
   
     tekenHuis(kleur,13);
     translate(150,0);
-
+  
+  
 }
 
 function tekenHuis(kleur,nr) {
@@ -34,6 +36,7 @@ function tekenHuis(kleur,nr) {
   textSize(15);
   text("naam",20,165);
   pop();
+  
 }
 
 function tekenAchtergrond() {
