@@ -6,7 +6,8 @@ var jos = {
   
   teken(muisPositieX) {
     this.x = muisPositieX;
-
+    this.y
+    this.schaal = this.x / (0.25*width); 
     // de regels hieronder tot en met pop() zorgen dat Jos wordt getekend. Je hoeft ze niet aan te passen.
     
     push();
@@ -14,7 +15,7 @@ var jos = {
     scale(this.schaal);
     noStroke();
     fill('indianred');
-    ellipse(0,0,50);
+    ellipse(0,0,50);    
     fill('slategray');
     ellipse(-7,-10,17);
     ellipse(7,-10,17);
@@ -44,7 +45,7 @@ function setup() {
 
 function draw() {
   background('lavender');
-  jos.teken(500);
+  jos.teken(mouseX,mouseY);
   
   text(jos.naam+" wordt getekend op x-positie (middelpunt neus) " + jos.x + ".",20,20);
 }

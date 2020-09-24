@@ -18,6 +18,7 @@ function draw() {
 
   tekenBoom(700);
   tekenBoom(900);
+  
 }
 
 function tekenHuis() {

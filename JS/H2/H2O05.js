@@ -1,4 +1,4 @@
-var aantalRijenRaster = 6;
+var aantalRijenRaster = 10;
 var aantalKolommenRaster = 9;
 var celGrootte;
 
