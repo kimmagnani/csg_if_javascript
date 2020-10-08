@@ -44,10 +44,10 @@ class Prooi {
   }
   
   beweeg() {
-    this.x += random(-15,15);
-    this.y += random(-25,25);
-    this.x = constrain(this.x,700,800);
-    this.y = constrain(this.y,20,580);
+    this.x += (-5);
+   this.y += (22);
+   this.x = constrain(this.x,700,800);
+ this.y = constrain(this.y,20,580);
   }
   
   teken() {

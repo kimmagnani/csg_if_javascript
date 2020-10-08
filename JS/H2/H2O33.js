@@ -13,8 +13,8 @@ class Raster {
     push();
     noFill();
     stroke('grey');
-    for (rij=0;rij<this.aantalRijen;rij++) {
-      for (kolom=0;kolom<this.aantalKolommen;kolom++) {
+    for (var rij=0;rij<this.aantalRijen;rij++) {
+      for (var kolom=0;kolom<this.aantalKolommen;kolom++) {
         rect(kolom*this.celGrootte,rij*this.celGrootte,this.celGrootte,this.celGrootte);
       }
     }
@@ -103,7 +103,7 @@ function setup() {
   frameRate(10);
   textFont("Verdana");
   textSize(90);
-  
+
   raster = new Raster(6,9);
   raster.berekenCelGrootte();
   

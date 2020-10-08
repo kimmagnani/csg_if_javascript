@@ -50,8 +50,8 @@ class Prooi {
   }
   
   beweeg() {
-    this.x += random(-15,15);
-    this.y += random(-25,25);
+    this.x += (-10);
+    this.y += (0);
     this.x = constrain(this.x,700,800);
     this.y = constrain(this.y,20,580);
   }
