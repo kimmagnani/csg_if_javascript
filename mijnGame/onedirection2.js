@@ -1,7 +1,7 @@
 /* klasse speler (mult)
    klasse level */
    
-var gameSettings
+var gameSettings 
 
 function preload() {
     liam = loadImage("mijnGame/JS/plaatjesgame/liam.png");
@@ -62,7 +62,7 @@ class Levels{
       this.actief = false;
   }
 
-   teken() {
+  /* teken() {
     background('paleturquoise');
     textFont("Monospace");
     textSize(20);
@@ -84,16 +84,16 @@ if (mousePressed) {
  } */
 }
 
-class PotatoVanger {
+class PotatoVanger {}
     
-beginScherm() {
+/*beginScherm() {
     push();
     fill(0, 139, 139,.5);
     textAlign(CENTER,TOP);
     fill(0);
     text("titel\n\nProbeer meer potatoes te vangen dan je tegenstander.\n\nGebruik de pijltjestoetsen (speler 1) of awsd (speler 2) voor de besturing. Klik om het spel te starten.",0,canvas.height / 4,canvas.width,canvas.height)
     pop();
-  } 
+} 
 
 
 /* function mousePressed() {
@@ -107,7 +107,7 @@ beginScherm() {
     } 
 } */
 
-
-
+function draw {
+     background ('red');
 }
 

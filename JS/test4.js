@@ -1,8 +1,3 @@
-/*  **********************************************************
-    **             BEGIN klasse Spel met Levels             **
-    ********************************************************** */
-
-
 class Levels {
     constructor() {
     this.level = null;
@@ -56,15 +51,15 @@ class Levels {
   
   beginScherm() {
     push();
-    noFill();
+    fill('red');
     stroke(150,200,255,.7);
     strokeWeight(5);
-    textSize(140);
-    text(" Spel MET Levels",0,0,canvas.width,canvas.height * 2 / 3);
+    textSize(75);
+    text("het galgje one\n direction spel",0,0,canvas.width,canvas.height * 2 / 3);
     textSize(32);
     strokeWeight(2);
     fill(0,0,0,0.75);
-    text("Dit voorbeeld laat zien hoe je een spel\nmet levels zou kunnen inrichten.\n\nDruk op een toets om te beginnen.\n",0,canvas.height * 1 / 2,canvas.width,canvas.height * 1 / 3);
+    text("Raad één voor één letters van het woord.\nMaar raad niet te vaak verkeerd, dan verlies je.\n\nDruk op een toets om te beginnen.\n",0,canvas.height * 1 / 2,canvas.width,canvas.height * 1 / 3);
     pop();
   }
 
@@ -91,7 +86,7 @@ class Levels {
   }    
   
   teken() {
-    background(achtergrond);
+    background(onedirection);
     if (!this.actief) {
         if (this.afgelopen) {
             this.eindScherm();
@@ -118,7 +113,15 @@ class Levels {
 
 
 function preload() {
-  achtergrond = loadImage("images/backgrounds/boom_mist.jpg");
+    liam = loadImage("JS/plaatjesgame/liam.png");
+    zayn = loadImage("JS/plaatjesgame/zayn.png");
+    louis = loadImage("JS/plaatjesgame/louis.png");
+    harry = loadImage("JS/plaatjesgame/harry.png");
+    niall = loadImage("JS/plaatjesgame/niall.png");
+    potato = loadImage("JS/plaatjesgame/potato.png");
+    carrot = loadImage("JS/plaatjesgame/carrot.png");
+    achtergrond = loadImage("JS/plaatjesgame/boom.png");
+    onedirection = loadImage("JS/plaatjesgame/onedirection.png");
 }
 
 function setup() {
@@ -133,7 +136,34 @@ function setup() {
   spel.nieuwSpel();
 }
 
+function draw() {
+  spel.update();
+  spel.teken();
+}
 
-/*  **********************************************************
-    **               EINDE hoofdprogramma                   **
-    ********************************************************** */
+function mousePressed() {
+  if (spel.actief) {
+    spel.levelGehaald = true;
+  }
+  if (spel.level>=spel.maxLevel) {
+    spel.afgelopen = true;
+    spel.gewonnen = true;
+    spel.actief = false;
+  }  
+}
+
+function keyTyped() {
+  if (!spel.actief && !spel.levelGehaald) {
+    // begin spel
+    spel.actief = true;
+  }
+  if ((spel.levelGehaald && !spel.afgelopen) && keyCode == ENTER) {
+    // level gehaald tijdens het spel
+    spel.nieuwLevel();
+  }
+  if ((spel.afgelopen) && keyCode == 32) {
+    // einde spel
+    spel.nieuwSpel();
+  }  
+}
+ 

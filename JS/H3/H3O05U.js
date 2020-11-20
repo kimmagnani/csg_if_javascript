@@ -136,7 +136,7 @@ class Galgje {
     **      EINDE klasse Galgje   BEGIN hoofdprogramma      **
     ********************************************************** */
 
-
+                                                                                                                                                       
 var beeldjes = [];
 var aantalBeeldjes = 11;
 
